@@ -5,6 +5,40 @@ const {
   PATIENTS_UPDATED_ERROR,
 } = require("../constant/constant");
 
+async function createPatient(data) {
+  try {
+    const {
+      patientName,
+      age,
+      gender,
+      phonenumber,
+      emailId,
+      address,
+      notes,
+      floor,
+      isActive,
+    } = data;
+    const result = await dbQueryAsync(
+      "INSERT INTO Patients (PatientsName, age, gender, phonenumber, emailId, address, notes, floor, isActive) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+      [
+        patientName,
+        age,
+        gender,
+        phonenumber,
+        emailId,
+        address,
+        notes,
+        floor,
+        isActive,
+      ]
+    );
+    return { PatientsId: result.insertId, ...data };
+  } catch (error) {
+    console.error("Error creating patient:", error);
+    throw new Error(PATIENTS_UPDATED_ERROR);
+  }
+}
+
 async function getAllPatients() {
   try {
     const Patients = await dbQueryAsync("SELECT * FROM Patients");
@@ -69,4 +103,5 @@ module.exports = {
   getPatientById,
   updatePatient,
   deletePatient,
+  createPatient,
 };

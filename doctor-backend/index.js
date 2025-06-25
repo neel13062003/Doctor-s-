@@ -32,11 +32,6 @@ const PatientRoutes = require("./routes/v1/patients.route");
 // Routers
 app.use("/api/v1/patients/", PatientRoutes);
 
-// Start processing requests
-processRequests().catch((error) => {
-  console.error("Error starting request processing:", error);
-});
-
 // Start the server with Socket.IO
 server.listen(process.env.PORT, () => {
   console.log(`Server is running at port ${process.env.PORT}`);

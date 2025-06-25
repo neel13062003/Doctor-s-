@@ -9,6 +9,51 @@ const {
   PATIENT_GET_ERROR,
 } = require("../constant/constant.js");
 
+async function createPatient(req, res) {
+  try {
+    const {
+      patientName, // ✅ match frontend
+      age,
+      gender,
+      phonenumber,
+      emailId,
+      address,
+      notes,
+      floor,
+      isActive,
+    } = req.body;
+
+    const newPatient = await PatientServices.createPatient({
+      patientName,
+      age,
+      gender,
+      phonenumber,
+      emailId,
+      address,
+      notes,
+      floor,
+      isActive,
+    });
+    if (newPatient.error) {
+      return res.status(400).json({
+        success: false,
+        error: newPatient.error,
+      });
+    }
+    return res.status(201).json({
+      success: true,
+      data: newPatient,
+      message: "Patient created successfully",
+    });
+  } catch (error) {
+    console.error("Error creating patient:", error);
+    return res.status(500).json({
+      success: false,
+      error: ERROR500,
+    });
+  }
+}
+
 async function getAllPatients(req, res) {
   try {
     const patients = await PatientServices.getAllPatients();
@@ -108,4 +153,5 @@ module.exports = {
   getPatientById,
   updatePatient,
   deletePatient,
+  createPatient,
 };
