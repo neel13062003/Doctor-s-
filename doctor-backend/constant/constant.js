@@ -1,0 +1,32 @@
+const ERROR500 = "Internal Server Error";
+const PATIENT_UPDATED_SUCCESS = "Patient updated successfully";
+const PATIENT_UPDATED_ERROR = "Error updating patient";
+const PATIENT_DELETED_SUCCESS = "Patient deleted successfully";
+const PATIENT_DELETED_ERROR = "Error deleting patient";
+const PATIENT_GET_ERROR = "Error getting patient";
+
+const PATIENT_NOT_FOUND = "Patient not found";
+const PATIENT_CREATED_SUCCESS = "Patient created successfully";
+const PATIENT_CREATED_ERROR = "Error creating patient";
+const PATIENT_GET_ALL_ERROR = "Error getting all patients";
+const PATIENT_GET_BY_ID_ERROR = "Error getting patient by ID";
+const PATIENT_UPDATE_ERROR = "Error updating patient";
+const PATIENT_DELETE_ERROR = "Error deleting patient";
+const PATIENT_ALREADY_EXISTS = "Patient already exists";
+const PATIENT_INVALID_DATA = "Invalid patient data provided";
+const PATIENT_EMAIL_EXISTS = "Patient email already exists";
+const PATIENT_PHONE_EXISTS = "Patient phone number already exists";
+const PATIENT_INACTIVE = "Patient is inactive";
+const PATIENT_ACTIVE = "Patient is active";
+const PATIENT_NOT_AUTHORIZED = "Patient not authorized";
+const PATIENT_LIMIT_EXCEEDED = "Patient limit exceeded";
+const PATIENT_SERVICE_UNAVAILABLE = "Patient service is currently unavailable";
+const PATIENT_INVALID_ID = "Invalid patient ID provided";
+const PATIENT_CREATION_FAILED = "Patient creation failed";
+const PATIENT_UPDATE_FAILED = "Patient update failed";
+const PATIENT_DELETION_FAILED = "Patient deletion failed";
+const PATIENT_FETCH_FAILED = "Patient fetch failed";
+const PATIENT_SEARCH_ERROR = "Error searching for patients";
+const PATIENT_SEARCH_NOT_FOUND =
+  "No patients found matching the search criteria";
+const PATIENT_PAGINATION_ERROR = "Error paginating patients";
