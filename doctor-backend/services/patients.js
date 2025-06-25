@@ -15,7 +15,7 @@ async function getAllPatients() {
   }
 }
 
-async function getPatientsById(PatientsId) {
+async function getPatientById(PatientsId) {
   try {
     const Patients = await dbQueryAsync(
       "SELECT * FROM Patients WHERE PatientsId = ?",
@@ -31,7 +31,7 @@ async function getPatientsById(PatientsId) {
   }
 }
 
-async function updatePatients(PatientsId, data) {
+async function updatePatient(PatientsId, data) {
   try {
     const { PatientsName, emailId, phonenumber, floor, isActive } = data;
     const result = await dbQueryAsync(
@@ -48,7 +48,7 @@ async function updatePatients(PatientsId, data) {
   }
 }
 
-async function deletePatients(PatientsId) {
+async function deletePatient(PatientsId) {
   try {
     const result = await dbQueryAsync(
       "DELETE FROM Patients WHERE PatientsId = ?",
@@ -66,7 +66,7 @@ async function deletePatients(PatientsId) {
 
 module.exports = {
   getAllPatients,
-  getPatientsById,
-  updatePatients,
-  deletePatients,
+  getPatientById,
+  updatePatient,
+  deletePatient,
 };
